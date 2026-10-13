@@ -20,7 +20,7 @@ class BigBall:
     def update(self):
         self.y -= 7
     def draw(self):
-        self.image.clip_draw(self.frame*100, 0, 50, 50, self.x, self.y)
+        self.image.clip_draw(self.frame*100, 0, 100, 100, self.x, self.y)
 
 class Boy:
     def __init__(self):
@@ -59,9 +59,12 @@ def reset_world():
     grass = Grass()
     world.append(grass)
     team = [Boy() for i in range(11)]
-    ball = [SmallBall() for j in range(20)]
+    smallball = [SmallBall() for j in range(10)]
+    bigball=[BigBall() for k in range(10)]
     world += team
-    world += ball
+    world += smallball
+    world += bigball
+
 
 def update_world():
     for o in world:
