@@ -5,7 +5,7 @@ import random
 # Game object class here
 class SmallBall:
     def __init__(self):
-        self.x, self.y = random.randint(100, 700), 599
+        self.x, self.y = random.randint(0, 800), 599
         self.frame = random.randint(0,1)
         self.image = load_image('ball21x21.png')
         
@@ -14,16 +14,16 @@ class SmallBall:
         self.y -= random.randint(4, 15)
 
     def draw(self):
-        self.image.clip_draw(self.frame*100, 0, 50, 50, self.x, self.y)
+        self.image.clip_draw(self.frame*100, 0, 21, 21, self.x, self.y)
 class BigBall:
     def __init__(self):
-        self.x, self.y = random.randint(100, 700), 599
+        self.x, self.y = random.randint(0, 800), 599
         self.frame = random.randint(0, 1)
         self.image = load_image('ball41x41.png')
     def update(self):
         self.y -= random.randint(4, 15)
     def draw(self):
-        self.image.clip_draw(self.frame*100, 0, 100, 100, self.x, self.y)
+        self.image.clip_draw(self.frame*100, 0, 41, 41, self.x, self.y)
 
 class Boy:
     def __init__(self):
