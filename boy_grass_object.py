@@ -3,6 +3,15 @@ import random
 
 
 # Game object class here
+class Ball:
+    def __init__(self):
+        self.x, self.y = random.randint(100, 900), 599
+        self.image = load_image('ball21x21.png')
+    def update(self):
+        self.y -= 7
+    def draw(self):
+        self.image.clip_draw(self.frame*100, 0, 100, 100, self.x, self.y)
+
 class Boy:
     def __init__(self):
         self.x, self.y = random.randint(100, 700), 90
@@ -40,7 +49,9 @@ def reset_world():
     grass = Grass()
     world.append(grass)
     team = [Boy() for i in range(11)]
+
     world += team
+   
 
 def update_world():
     for o in world:
